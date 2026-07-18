@@ -52,7 +52,7 @@ to structure a full-stack app properly.
 
 **Clone the project**
 ```bash
-git clone https://github.com/mihir-joshii/E-Learning-Platform.git
+git clone https://github.com/pratik-kothari-dev/e-learning-platform.git
 ```
 
 **Run the backend**
