@@ -1,109 +1,253 @@
-# E-Learning Platform
+# 🎓 E-Learning Platform
 
-A full-stack web application that I built using the MERN Stack 
-as part of my MCA final year project. The idea was to create 
-a real-world learning platform where students can enroll in 
-courses, instructors can manage their content, and admins can 
-oversee the entire platform.
+A full-stack **Learning Management System (LMS)** built using the **MERN Stack** that enables students to enroll in courses, instructors to create and manage educational content, and administrators to oversee the platform through a secure role-based access control system.
 
----
-
-## Why I Built This
-
-I wanted to go beyond simple CRUD apps and build something 
-that solves a real problem. This project helped me understand 
-how role-based systems work in production applications and how 
-to structure a full-stack app properly.
+![React](https://img.shields.io/badge/Frontend-React.js-61DAFB?logo=react)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-339933?logo=node.js)
+![Express.js](https://img.shields.io/badge/Framework-Express.js-000000?logo=express)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-47A248?logo=mongodb)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange)
+![Tailwind CSS](https://img.shields.io/badge/Styling-TailwindCSS-38BDF8?logo=tailwindcss)
 
 ---
 
-## What It Can Do
+# 📖 Project Overview
 
-**If you are a Student:**
-- Create an account and browse available courses
-- Enroll in courses and track your progress module by module
-- Leave ratings and reviews after completing a course
+The E-Learning Platform is a role-based Learning Management System (LMS) designed to simulate a real-world online education platform.
 
-**If you are an Instructor:**
-- Register and wait for Admin approval before going live
-- Create and manage your own courses with video links 
-  and study materials
-- See how many students enrolled in your courses
+The platform allows:
 
-**If you are an Admin:**
+- 🎓 Students to browse and enroll in courses.
+- 👨‍🏫 Instructors to create and manage educational content.
+- 🛡️ Administrators to manage users and oversee the platform.
+
+The project focuses on building a production-like application with secure authentication, authorization, RESTful APIs, and structured backend architecture.
+
+---
+
+# ✨ Features
+
+## 🔐 Authentication
+
+- User Registration
+- Secure Login
+- JWT Authentication
+- Password Hashing using Bcrypt
+- Protected Routes
+
+### 🎓 Student Features
+
+- Create an account
+- Browse available courses
+- Enroll in courses
+- Track learning progress
+- Submit ratings and reviews after course completion
+
+### 👨‍🏫 Instructor Features
+
+- Register as an Instructor
+- Wait for Admin approval
+- Create and manage courses
+- Upload learning materials and video links
+- View enrolled students
+
+### 🛡️ Admin Features
+
 - Approve or reject instructor registrations
-- Block users if needed
-- Have full visibility over all courses and users on 
-  the platform
+- Manage platform users
+- Block users when necessary
+- View all courses
+- Monitor platform activities
 
 ---
 
-## Tech Stack
+# 🏗️ System Architecture
 
-- **Frontend:** React.js, Tailwind CSS
-- **Backend:** Node.js with Express.js
-- **Database:** MongoDB with Mongoose
-- **Auth:** JWT tokens + Bcrypt for password hashing
-- **API Testing:** Postman
+```text
+                React.js Frontend
+                        │
+                 REST API Calls
+                        │
+                        ▼
+          Node.js + Express.js Backend
+                        │
+            JWT Authentication Middleware
+                        │
+                        ▼
+          MongoDB Database (Mongoose)
+```
+
+The application follows a layered architecture where React handles the user interface, Express provides REST APIs, JWT secures authenticated requests, and MongoDB stores application data.
 
 ---
 
-## How to Run This Locally
+# 🛠️ Tech Stack
 
-**Clone the project**
+| Category | Technology |
+|----------|------------|
+| Frontend | React.js, Tailwind CSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB, Mongoose |
+| Authentication | JWT, Bcrypt |
+| API Testing | Postman |
+| Version Control | Git & GitHub |
+
+---
+
+# 🧠 Core Concepts Implemented
+
+- JWT Authentication
+- Role-Based Access Control (RBAC)
+- RESTful API Development
+- Password Hashing using Bcrypt
+- Protected Routes
+- CRUD Operations
+- Middleware-Based Authorization
+- MongoDB Data Modeling
+- Frontend & Backend Integration
+
+---
+
+# 📸 Application Preview
+
+The following screenshots highlight the key features and workflows of the E-Learning Platform.
+
+## 🌐 Public Pages
+
+| Homepage | All Courses |
+|-----------|-------------|
+| ![](screenshots/Homepage.png) | ![](screenshots/AllCourses.png) |
+
+| Course Details |
+|----------------|
+| ![](screenshots/CourseDescription-BeforeEnrollment.png) |
+
+---
+
+## 👤 Student Portal
+
+| Login | My Learnings |
+|--------|--------------|
+| ![](screenshots/UserLogin.png) | ![](screenshots/MyProfile-Learnings.png) |
+
+| Certificates |
+|--------------|
+| ![](screenshots/MyProfile-Certificates.png) |
+
+---
+
+## 👨‍🏫 Instructor Portal
+
+| Dashboard | Add Course |
+|-----------|------------|
+| ![](screenshots/InstructorDashboard-Overview.png) | ![](screenshots/InstructorDashboard-AddCourse-1.png) |
+
+---
+
+## 🛡️ Admin Portal
+
+| Dashboard | Manage Users |
+|-----------|--------------|
+| ![](screenshots/AdminDashboard-Overview.png) | ![](screenshots/AdminDashboard-ManageUsers.png) |
+
+---
+
+# ✅ Prerequisites
+
+Before running this project, ensure you have installed:
+
+- Node.js (v18 or above recommended)
+- npm
+- Git
+- MongoDB (Local or MongoDB Atlas)
+
+---
+
+# 🚀 Installation
+
+## 1. Clone the Repository
+
 ```bash
 git clone https://github.com/pratik-kothari-dev/e-learning-platform.git
 ```
 
-**Run the backend**
+## 2. Navigate to the Project
+
+```bash
+cd e-learning-platform
+```
+
+## 3. Install Backend Dependencies
+
 ```bash
 cd backend
 npm install
+```
+
+## 4. Start the Backend Server
+
+```bash
 nodemon server.js
 ```
 
-**Run the frontend**
+## 5. Install Frontend Dependencies
+
 ```bash
-cd frontend
+cd ../frontend
 npm install
+```
+
+## 6. Start the Frontend
+
+```bash
 npm run dev
 ```
 
-**Set up your .env file in the backend folder**
+---
 
-Create a `.env` file inside the `/backend` directory 
-and add the following:
+# 🔐 Environment Variables
 
+Create a `.env` file inside the `backend` directory.
+
+```env
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 PORT=5000
+```
 
-> Refer to `.env.example` file already present in the 
-> backend folder for reference.
-
----
-
-## What I Learned
-
-- How to build and connect a full REST API with React frontend
-- Implementing JWT authentication with protected routes
-- Designing role-based access control from scratch
-- Managing relational data in MongoDB using Mongoose
+Refer to the `.env.example` file for reference.
 
 ---
 
-## Built By
+# 🎯 Key Learnings
 
-This project was collaboratively developed by:
+Building this project helped me gain hands-on experience with:
 
-**Pratik Kothari**
-- GitHub: [github.com/pratik-kothari-dev](https://github.com/pratik-kothari-dev)
-- LinkedIn: [linkedin.com/in/pratik-kothari-dev](https://linkedin.com/in/pratik-kothari-dev)
+- Designing RESTful APIs
+- Implementing JWT Authentication & RBAC
+- Structuring scalable MERN applications
+- Managing MongoDB schemas with Mongoose
+- Integrating React frontend with Express backend
 
-**Mihir Joshi**
-- GitHub: [github.com/mihir-joshii](https://github.com/mihir-joshii)
-- LinkedIn: [linkedin.com/in/mihirjoshi-mern-dev](https://www.linkedin.com/in/mihirjoshi-mern-dev)
+---
 
-> We built this together as part of our academic journey, 
-> with the goal of creating something that goes beyond 
-> textbook knowledge and reflects real-world development.
+# 👥 Contributors
+
+This project was collaboratively developed as part of our MCA academic journey.
+
+## Pratik Kothari
+
+- GitHub: https://github.com/pratik-kothari-dev
+- LinkedIn: https://linkedin.com/in/pratik-kothari-dev
+
+---
+
+## Mihir Joshi
+
+- GitHub: https://github.com/mihir-joshii
+- LinkedIn: https://linkedin.com/in/mihirjoshi-mern-dev
+
+---
+
+
+⭐ If you found this project useful, consider giving it a **Star** on GitHub!
